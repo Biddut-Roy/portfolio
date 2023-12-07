@@ -1,4 +1,9 @@
+
 // icons
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+
+
 import {
   HiHome,
   HiUser,
@@ -27,7 +32,23 @@ export const navData = [
 ];
 
 const Nav = () => {
-  return <nav>nav</nav>;
+  const router = useRouter();
+  return <>
+    <nav className='flex flex-col items-center xl:justify-center gap-y-4 fixed h-max bottom-0 mt-auto xl:right-[2%] z-50 top-0 w-full xl:w-16 xl:max-w-md xl:h-screen'>
+      <div className=' flex w-full xl:flex-col items-center justify-between xl:justify-center gap-y-10 px-4 md:px-40 xl:px-0 h-[80px] xl:h-max py-8 bg-white/10 backdrop-blur-sm text-3xl xl:text-xl xl:rounded-full'>
+        {
+          navData.map((navLink, idx) => (
+            <Link
+              className={`${router.pathname === navLink.path && 'text-accent'} hover:text-accent`}
+              href={navLink.path} key={idx}>
+              <div>{navLink.icon}</div>
+            </Link>
+          ))
+        }
+      </div>
+    </nav>
+  </>
+
 };
 
 export default Nav;
