@@ -6,17 +6,16 @@ import { useRouter } from 'next/router';
 
 import {
   HiHome,
-  HiUser,
   HiViewColumns,
   HiRectangleGroup,
   HiChatBubbleBottomCenterText,
   HiEnvelope,
 } from 'react-icons/hi2';
-
+import { GiSkills } from "react-icons/gi";
 // nav data
 export const navData = [
   { name: 'home', path: '/', icon: <HiHome /> },
-  { name: 'about', path: '/about', icon: <HiUser /> },
+  { name: 'skills', path: '/skills', icon: <GiSkills /> },
   { name: 'services', path: '/services', icon: <HiRectangleGroup /> },
   { name: 'work', path: '/work', icon: <HiViewColumns /> },
   {
@@ -31,6 +30,7 @@ export const navData = [
   },
 ];
 
+//  navbae
 const Nav = () => {
   const router = useRouter();
   return <>

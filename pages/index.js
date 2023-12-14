@@ -6,11 +6,12 @@ import { fadeIn } from "../variants"
 import Avatar from "../components/Avatar";
 import ParticlesContainer from "../components/ParticlesContainer";
 
+
 const Home = () => {
 
-
   return <>
-    <div className=" mt-8 xl:mt-24 relative">
+    <div className=" mt-4 xl:mt-24 " >
+    <ParticlesContainer />
       <div className="  w-[70%] xl:w-1/3 mx-auto h-full">
         <motion.h1
           variants={fadeIn('down', '0.8')}
@@ -18,13 +19,14 @@ const Home = () => {
           animate="show"
           exit='hidden'
           className=" text-gray-900">Hello, my name is <br />  <span className=" text-xl xl:text-3xl text-black font-bold">Biddut Chandro Roy</span></motion.h1>
+           <ParticlesContainer />
         <motion.p
           variants={fadeIn('down', '0.6')}
           initial="hidden"
           animate="show"
           exit='hidden'
           className=" text-white">
-          I'm a full-stack develomotion.per specialised in frontend and backend development for scalable web apps.I have made a variety of Mern Stack Applications. Want to know how I may help your project? Check out my projects from my GitHub<Link href={'https://github.com/Biddut-Roy'}><span className="text-2xl flex items-center text-black"><FaGithub /> Profile</span></Link>
+          I am a full-stack develomotion.per specialised in frontend and backend development for scalable web apps.I have made a variety of Mern Stack Applications. Want to know how I may help your project? Check out my projects from my GitHub.
         </motion.p>
         <motion.div
           variants={fadeIn('down', '0.4')}
@@ -35,7 +37,7 @@ const Home = () => {
           <ProjectsBtn  />
         </motion.div>
       </div>
-      <div className=" absolute h-full w-full top-0 bottom-0 ">
+      <div className=" ">
           <ParticlesContainer />
       </div>
          {/* img */}
@@ -48,9 +50,10 @@ const Home = () => {
       initial="hidden"
       animate="show"
       exit='hidden'
-      className=" absolute md:top-10 md:right-0 xl:top-2 z-40 xl:right-20 translate-z-0">
+      className=" absolute md:top-10 md:right-0 xl:top-8 z-40 xl:right-20 translate-z-0">
         <Avatar />
       </motion.div>
+      
     </div>
   </>
 };
